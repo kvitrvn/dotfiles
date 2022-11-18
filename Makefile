@@ -5,6 +5,7 @@ XRESOURCES_FILEPATH=~/.Xresources
 BASHRC_FILEPATH=~/.bashrc
 POLYBAR_FILEPATH=~/.config/polybar/config.ini
 ROFI_FILEPATH=~/.config/rofi/config.rasi
+POWERLINE_FILEPATH=~/.config/powerline
 
 install:
 	xargs -d '\n' -a packages/i3.list yay --noconfirm --needed -S
@@ -22,3 +23,4 @@ sync:
 	cp ${BASHRC_FILEPATH} ./config/bash/.bashrc
 	cp ${POLYBAR_FILEPATH} ./config/polybar/config.ini
 	cp ${ROFI_FILEPATH} ./config/rofi/config.rasi
+	cp -r ${POWERLINE_FILEPATH} ./config/powerline
