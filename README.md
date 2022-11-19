@@ -1,0 +1,1 @@
+# Personal i3 configuration
