@@ -7,4 +7,5 @@ i3:
 	$(stow) rofi
 	$(stow) urxvt
 	$(stow) code
+	$(stow) polybar
 	xrdb ~/.Xresources

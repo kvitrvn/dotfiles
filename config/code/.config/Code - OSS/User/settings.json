@@ -12,7 +12,7 @@
     "editor.occurrencesHighlight": "off",
     "editor.renderWhitespace": "trailing",
 
-    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Operator Mono Lig', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'Font Awesome 6 Free','Font Awesome 6 Free Solid', 'Operator Mono Lig', monospace",
     "terminal.integrated.fontFamily": "'MesloLGS NF', 'Fira Code', 'Operator Mono Lig', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
