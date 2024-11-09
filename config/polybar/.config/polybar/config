@@ -14,7 +14,7 @@ spotify = ${xrdb:color10}
 power= ${colors.urgent}
 
 [bar/default]
-monitor = ${env:MONITOR:}
+monitor = ${env:MONITOR:eDP-1}
 height = 32
 offset-y = 0
 top = true
@@ -34,15 +34,7 @@ font-1 = Font Awesome 6 Free Solid:style=Solid:size=11;3
 
 modules-left = i3 
 modules-center = xwindow 
-modules-right = cpu memory filesystem wired volume date volume powermenu
-
-[bar/right]
-inherit = bar/default
-
-modules-left = i3
-modules-center = date
-modules-right = volume
-padding-left = 3
+modules-right = cpu memory filesystem wired-network wireless-network pulseaudio date powermenu
 
 [module/i3]
 type = internal/i3
@@ -113,32 +105,78 @@ label-foreground = ${colors.ram}
 type = internal/date
 date = %{F#4C566A} %B %d,  %{F#D8DEE9}%H:%M
 
-[module/volume]
-type = internal/volume
-format-volume = <ramp-volume> <bar-volume>
-format-muted =  
-ramp-volume-0 = 0
-ramp-volume-1 = 1
-ramp-volume-2 = 2
-ramp-volume-3 = 3
-ramp-volume-foreground = ${colors.active}
-bar-volume-width = 6
-bar-volume-indicator =
-bar-volume-fill = fill
-bar-volume-fill-font = 3
-bar-volume-fill-foreground = ${colors.foreground}
-bar-volume-empty = empty
-bar-volume-empty-font = 3
-bar-volume-empty-foreground = ${colors.secondary}
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+reverse-scroll = false
+format-volume = <ramp-volume>
+label-muted = 
+label-muted-foreground =  ${colors.secondary}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+click-right = pavucontrol
 
-[module/wired]
+[module/wired-network]
 type = internal/network
-interface = eth0
-format-connected = <label-connected>
-format-connected-underline = ${colors.underline}
+interface = enp59s0u2
+interface-type = wired
+interval = 3.0
+udspeed-minwidth = 5
+accumulate-stats = true
+unknown-as-up = true
+speed-unit = B/s
+format-connected =  <label-connected>
 format-disconnected = <label-disconnected>
-label-connected = wired %local_ip%
-label-disconnected = diconnected
+format-packetloss = <animation-packetloss> <label-connected>
+label-connected = %{A1:terminal -e nmtui &:}%local_ip%%{A}
+label-connected-foreground = ${colors.secondary}
+label-disconnected = %{A1:terminal -e nmtui &:}%{A}
+label-disconnected-foreground = ${colors.secondary}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #000000
+animation-packetloss-framerate = 500
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+interface-type = wireless
+interval = 3.0
+udspeed-minwidth = 5
+accumulate-stats = true
+unknown-as-up = true
+speed-unit = B/s
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = <animation-packetloss> <label-connected>
+label-connected = %{A1:terminal -e nmtui &:}%local_ip%%{A}
+label-connected-foreground = ${colors.active}
+label-disconnected = %{A1:terminal -e nmtui &:}%{A}
+label-disconnected-foreground = ${colors.secondary}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #000000
+animation-packetloss-framerate = 500
 
 [module/powermenu]
 type = custom/menu
