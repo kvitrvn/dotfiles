@@ -10,7 +10,6 @@ secondary = ${xrdb:secondary}
 underline = ${xrdb:color3}
 ram = ${xrdb:color14}
 cpu = ${xrdb:color13}
-spotify = ${xrdb:color10}
 power= ${colors.urgent}
 
 [bar/default]
@@ -21,6 +20,8 @@ top = true
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
+
+enable-ipc = true
 
 line-size = 3
 line-color = #f00
@@ -34,7 +35,7 @@ font-1 = Font Awesome 6 Free Solid:style=Solid:size=11;3
 
 modules-left = i3 
 modules-center = xwindow 
-modules-right = cpu memory filesystem wired-network wireless-network pulseaudio date powermenu
+modules-right = spotify spotify-prev spotify-play-pause spotify-next cpu memory filesystem wired-network wireless-network pulseaudio date powermenu
 
 [module/i3]
 type = internal/i3
@@ -62,9 +63,9 @@ label-visible-foreground = ${colors.active}
 label-unfocused-foreground = ${colors.secondary}
 label-urgent-foreground = ${colors.urgent}
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
@@ -202,3 +203,32 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[module/spotify]
+type = custom/script
+tail = true
+interval = 1
+; prefix symbol is shown before the text
+format-prefix = ""
+format = <label>
+format-foreground = ${colors.secondary}
+exec = ~/.config/polybar/scroll_spotify_status.sh
+
+[module/spotify-prev]
+type = custom/script
+exec = echo ""
+format = <label>
+click-left = playerctl previous -p spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = echo ""
+initial = 1
+click-left = playerctl play-pause -p spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo ""
+format = <label>
+click-left = playerctl next -p spotify
