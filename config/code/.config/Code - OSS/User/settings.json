@@ -4,9 +4,6 @@
 
     "workbench.tree.indent": 15,
     "workbench.tree.renderIndentGuides": "always",
-
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
     "window.titleBarStyle": "custom",
 
     "editor.occurrencesHighlight": "off",
@@ -89,6 +86,9 @@
     "emmet.includeLanguages": {
       "templ": "html"
     },
-    "emmet.triggerExpansionOnTab": true
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "git.autofetch": true
   }
   
