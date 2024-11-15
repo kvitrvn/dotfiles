@@ -11,4 +11,5 @@ i3:
 	$(stow) urxvt
 	$(stow) code
 	$(stow) polybar
+	$(stow) nvim
 	xrdb ~/.Xresources
