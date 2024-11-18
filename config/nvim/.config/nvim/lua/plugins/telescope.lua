@@ -2,6 +2,10 @@ return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
+      {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+      },
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-tree/nvim-web-devicons",
@@ -11,6 +15,11 @@ return {
       local actions = require("telescope.actions")
 
       telescope.setup({
+        extensions = {
+          file_browser = {
+            hijack_netrw = true,
+          }
+        },
         defaults = {
           -- Parce que c'est joli
           prompt_prefix = " ",
@@ -20,8 +29,8 @@ return {
 
           mappings = {
             i = {
-              ["<C-j>"] = actions.move_selection_next,
-              ["<C-k>"] = actions.move_selection_previous,
+              ["<C-DOWN>"] = actions.move_selection_next,
+              ["<C-UP>"] = actions.move_selection_previous,
             },
           },
         },
@@ -47,7 +56,7 @@ return {
       keymap.set(
         "n",
         "<leader>fb",
-        "<cmd>Telescope buffers<cr>",
+        "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
         { desc = "Recherche de chaînes de caractères dans les noms de buffers" }
       )
       keymap.set(
