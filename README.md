@@ -12,6 +12,7 @@ Manjaro with i3.
 - rofi
 
 ### Requirements
+
 - [JetBrainsMono Font](https://www.jetbrains.com/lp/mono/)
 - [FontAwesome6 Free](https://fontawesome.com/download)
 
