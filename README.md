@@ -1,7 +1,5 @@
 # About
 
-![](./screenshots/overwiew.png)
-
 ## Get started
 
 ### Requirements
