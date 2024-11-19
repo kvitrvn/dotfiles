@@ -11,6 +11,7 @@
 ```bash 
 make install
 make i3
+# restart i3 with shortcut (default $mod+Shift+r)
 ```
 
 ## Miscallaneous
