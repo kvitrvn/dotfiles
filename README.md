@@ -1,6 +1,6 @@
 # Personnal dotfiles
 
-Manjaro with i3.
+![](./screenshots/overwiew.png)
 
 ## Get started
 
