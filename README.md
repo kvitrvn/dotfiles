@@ -1,6 +1,15 @@
-# About
+# Personnal dotfiles
+
+Manjaro with i3.
 
 ## Get started
+
+- i3
+- urxvt
+- polybar
+- nvim
+- code 
+- rofi
 
 ### Requirements
 - [JetBrainsMono Font](https://www.jetbrains.com/lp/mono/)
