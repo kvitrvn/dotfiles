@@ -1,6 +1,7 @@
 stow
+feh
 vim
-nvim
+neovim
 code
 pavucontrol
 pulseaudio
