@@ -200,6 +200,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws5
 assign [class="discord"] $ws2
+assign [class="Spotify"] $ws3
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
