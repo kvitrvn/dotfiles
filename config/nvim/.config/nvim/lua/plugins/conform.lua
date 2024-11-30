@@ -18,6 +18,7 @@ return {
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         yaml = { "prettier" },
+        go = { "goimports" }
       },
       format_on_save = {
         lsp_fallback = true,

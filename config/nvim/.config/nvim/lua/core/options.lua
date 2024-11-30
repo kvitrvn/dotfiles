@@ -35,6 +35,7 @@ opt.list = true
 opt.listchars:append({ nbsp = "␣", trail = "•", precedes = "«", extends = "»", tab = "> " })
 
 -- miscallaneous
-opt.swapfile = false -- remove swap file
-opt.undofile = true -- infinite undo
+opt.swapfile = false      -- remove swap file
+opt.undofile = true       -- infinite undo
 opt.iskeyword:append("-") -- word with "-" treat as unique word
+
