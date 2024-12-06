@@ -12,4 +12,6 @@ i3:
 	$(stow) code
 	$(stow) polybar
 	$(stow) nvim
+	$(stow) picom
+	$(stow) dunst
 	xrdb ~/.Xresources
