@@ -145,8 +145,8 @@ set $ws2 2: 
 set $ws3 3: 
 set $ws4 4: 
 set $ws5 5: 
-set $ws6 6: 
-set $ws7 7:
+set $ws6 6: 
+set $ws7 7: 
 set $ws8 8:
 
 # use workspaces on different screens if exists
@@ -190,12 +190,12 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="(firefox|Navigator|firefox-developer-edition)"] $ws1
+assign [class="^(firefox|Navigator)"] $ws1
 assign [class="discord"] $ws2
 assign [class="Spotify"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="(URxvt|terminator|Terminator)"] $ws5
-assign [class="DBeaver"] $ws6
+assign [class="DBeaver"] $ws7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -386,3 +386,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # background image
 exec --no-startup-id nitrogen --restore
+
+# screen resolution
+exec_always xrandr --output eDP-1 --mode "2048x1152"
