@@ -28,7 +28,7 @@ font pango: SFNS Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -62,7 +62,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -190,11 +190,11 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="firefox"] $ws1
+assign [class="(firefox|Navigator|firefox-developer-edition)"] $ws1
 assign [class="discord"] $ws2
 assign [class="Spotify"] $ws3
 assign [class="thunderbird"] $ws4
-assign [class="URxvt"] $ws5
+assign [class="(URxvt|terminator|Terminator)"] $ws5
 assign [class="DBeaver"] $ws6
 
 # Open specific applications in floating mode
@@ -383,3 +383,6 @@ mode "$mode_gaps_outer" {
 
 # Redémarre polybar quand on redémarre i3
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# background image
+exec --no-startup-id nitrogen --restore

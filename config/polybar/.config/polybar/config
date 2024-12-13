@@ -35,7 +35,7 @@ font-1 = Font Awesome 6 Free Solid:style=Solid:size=11;3
 
 modules-left = i3 
 modules-center = xwindow 
-modules-right = cpu memory filesystem wired-network wireless-network pulseaudio bluetooth battery date powermenu
+modules-right = cpu memory filesystem wired-network wireless-network pulseaudio battery date powermenu
 
 [module/i3]
 type = internal/i3
@@ -251,9 +251,3 @@ animation-discharging-framerate = 500
 animation-low-0 = !
 animation-low-1 = 
 animation-low-framerate = 200
-
-[module/bluetooth]
-type = custom/script
-exec = ~/.config/polybar/bluetooth.sh
-tail = true
-click-left = ~/.config/polybar/bluetooth.sh --toggle &
